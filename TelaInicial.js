@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity} from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-export default function TelaInicial(){
+export default function TelaInicial({navigation}){
     return(
         
         <View style={estilos.container}>
@@ -10,11 +10,23 @@ export default function TelaInicial(){
                 style={estilos.cxImagem1}
                 imageStyle={estilos.Imagem1}
             >
-                
+                <Text style={{color: "white", 
+                              fontSize:50, 
+                              fontWeight: 900, 
+                              marginLeft: 30,
+                              marginBottom: 30}}>
+                    Fácil e{'\n'}
+                    rápido{'\n'}
+                    Comece a{'\n'}
+                    aprender{'\n'}
+                    Inglês agora!
+                    
+                </Text>  
+
             </ImageBackground>
 
             <TouchableOpacity style={estilos.botao}
-                onPress={()=>{alert("Botão clicado")}}
+                onPress={()=>{navigation.navigate("Tela Login")}}
             >
                 <Text style={{
                     color: "white", 
@@ -34,6 +46,7 @@ const estilos = StyleSheet.create({
         alignItems: "center"
     },
     cxImagem1:{
+        justifyContent: "flex-end",
         width: "100%",
         height: "85%",
     },
