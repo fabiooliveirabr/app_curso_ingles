@@ -36,7 +36,9 @@ export default function TelaLogin({navigation}){
                     mode="outlined"
                     style={{width: 300, marginBottom:50}}
                     label="senha"/>
-                <TouchableOpacity style={estilos.botao} >
+                <TouchableOpacity 
+                    onPress={()=>{fazerLogin()}}
+                    style={estilos.botao} >
                     <Text style={{
                         color: "white",
                         fontSize: 20
