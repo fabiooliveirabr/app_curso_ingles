@@ -3,9 +3,11 @@ import { View, Text, StyleSheet,
     Alert} from "react-native";
 import { TextInput } from "react-native-paper";
 import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
 
 export default function TelaLogin({navigation}){
-    var usuarioDigitado="";
+    const [senhaOculta] = useState(true);
+     var usuarioDigitado="";
     var senhaDigitada="";
     function fazerLogin(){
         if(usuarioDigitado == "admin" && senhaDigitada=="1234"){
@@ -32,6 +34,7 @@ export default function TelaLogin({navigation}){
                     label="usuario"/>
 
                 <TextInput 
+                    secureTextEntry={senhaOculta}
                     onChangeText={(texto)=>{senhaDigitada=texto}}
                     mode="outlined"
                     style={{width: 300, marginBottom:50}}
