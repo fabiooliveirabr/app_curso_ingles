@@ -1,45 +1,36 @@
 import { View, Text, StyleSheet } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-const Modulos = ({titulo, desc, ch, x}) =>{
-    if(x == "1"){
-        return(
-            <Text>Retorno 1</Text>
-        );
-    }else{
-        return(
-            <Text>Retorno 2</Text>
-        );
+const Modulos = ({titulo, desc, ch}) =>{  
+    
+    return (
+        <View style={estilos.cxModulo}>
         
-    }
-    // return (
-    //     <View style={estilos.cxModulo}>
-        
-    //         <View style={{width:"80%"}}>
-    //             <Text style={{color: "white",
-    //                           fontSize: 25,
-    //                           fontWeight: 900
-    //             }}>
-    //                 {titulo}
-    //             </Text>
-    //             <Text style={{color: "#F2A4F6"}}>
-    //                 {desc}
-    //             </Text>
-    //             <Ionicons
-    //                 name="play"
-    //                 size={33}
-    //                 color="#05e118"
-    //             />
-    //         </View>
+            <View style={{width:"80%"}}>
+                <Text style={{color: "white",
+                              fontSize: 25,
+                              fontWeight: 900
+                }}>
+                    {titulo}
+                </Text>
+                <Text style={{color: "#F2A4F6"}}>
+                    {desc}
+                </Text>
+                <Ionicons
+                    name="play"
+                    size={33}
+                    color="#05e118"
+                />
+            </View>
 
-    //         <View style={estilos.cxHoras}>
-    //             <Text style={{color:"#FFF200"}}>
-    //                 {ch}h
-    //             </Text>
-    //         </View>
+            <View style={estilos.cxHoras}>
+                <Text style={{color:"#FFF200"}}>
+                    {ch}h
+                </Text>
+            </View>
 
-    //     </View>
-    // );
+        </View>
+    );
 }
 
 const estilos = StyleSheet.create({

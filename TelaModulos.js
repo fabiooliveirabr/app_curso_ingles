@@ -34,7 +34,6 @@ export default function TelaModulos(){
                     titulo="UNIDADE I"
                     desc="Falsos cognatos"
                     ch="15"
-                    x="1"
                     />
                     <Modulos 
                     titulo="UNIDADE II"
