@@ -1,8 +1,9 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet} from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-
-const Modulos = ({titulo, desc, ch}) =>{  
-    
+import { useNavigation } from "@react-navigation/native";
+ 
+const Modulos = ({titulo, desc, ch}) =>{     
+   const navigation = useNavigation(); 
     return (
         <View style={estilos.cxModulo}>
         
@@ -16,10 +17,11 @@ const Modulos = ({titulo, desc, ch}) =>{
                 <Text style={{color: "#F2A4F6"}}>
                     {desc}
                 </Text>
-                <Ionicons
+                 <Ionicons
                     name="play"
                     size={33}
                     color="#05e118"
+                    onPress={()=>{navigation.navigate("Tela Tarefas")}}
                 />
             </View>
 
