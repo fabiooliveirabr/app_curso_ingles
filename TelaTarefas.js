@@ -42,8 +42,14 @@ export default function TelaTarefas(){
                 style={{marginTop:40,
                         marginLeft: 40}}
             >
-                <Tarefas status="1"/>
-                <Tarefas status="0"/>
+                <Tarefas status="1" 
+                         titulo="Atividade 01"
+                         desc="Teste seus conhecimentos
+                               sobre falsos cognatos."/>
+                <Tarefas status="0"
+                         titulo="Atividade 02"
+                         desc="Game sobre falsos
+                               cognatos."/>
                 <Tarefas status="0"/>
                 <Tarefas status="0"/>
                 <Tarefas status="0"/>

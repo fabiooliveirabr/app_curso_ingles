@@ -1,18 +1,19 @@
 import 
     {View, Text, StyleSheet,
-    TouchableOpacity } from "react-native";
+    TouchableOpacity, 
+    Alert} from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-const Tarefas=({status})=>{
+const Tarefas=({status, titulo, desc})=>{
     if(status == "1"){
         return(
             <View style={estilos.cxTarefaAtiva}>
                 <Text style={estilos.titulo}>
-                    Tarefa liberada
+                    {titulo}
                 </Text>
 
                 <Text style={estilos.descricao}>
-                    Descrição aparece aqui...
+                    {desc}
                 </Text>
 
                 <TouchableOpacity style={estilos.btnAtivado}>
@@ -20,7 +21,9 @@ const Tarefas=({status})=>{
                         name="play"
                         size={35}
                         color="#05E118" />
-                    <Text>Começar</Text>
+                    <Text style={{marginTop:8}}>
+                        Começar
+                    </Text>
                 </TouchableOpacity>
 
 
@@ -28,8 +31,30 @@ const Tarefas=({status})=>{
         );
     }else{
         return(
-            <View style={estilos.cxTarefaBloqueada}>
-                <Text>Tarefa bloqueada</Text>
+            <View style={estilos.cxTarefaBloqueada}>                
+
+                <Text style={estilos.titulo}>
+                    {titulo}
+                </Text>
+
+                <Text style={estilos.descricao}>
+                    {desc}
+                </Text>
+
+                <TouchableOpacity 
+                style={estilos.btnDesativado}
+                onPress={()=>{Alert.alert(
+                            "Aviso",
+                            "Você deve concluir a tarefa anterior!")}}>
+                    <Ionicons
+                        name="lock-closed"
+                        size={35}
+                        color="#b5b5b5" />
+                    <Text style={{marginTop:8}}>
+                        Começar
+                    </Text>
+                </TouchableOpacity>
+
             </View>
         );
     }
@@ -49,6 +74,15 @@ const estilos = StyleSheet.create({
     },
     btnAtivado:{
         backgroundColor: "#AA93DD",
+        flexDirection: "row",
+        padding: 8,
+        width: 130,
+        justifyContent: "center",
+        borderRadius: 20,
+        marginTop: 30
+    },
+    btnDesativado:{
+        backgroundColor: "#6F6582",
         flexDirection: "row",
         padding: 8,
         width: 130,
