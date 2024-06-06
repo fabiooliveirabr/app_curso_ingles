@@ -18,7 +18,7 @@ const Modulos = ({titulo, desc, ch}) =>{
                     {desc}
                 </Text>
                  <Ionicons
-                    name="play"
+                    name="search"
                     size={33}
                     color="#05e118"
                     onPress={()=>{navigation.navigate("Tela Tarefas")}}
