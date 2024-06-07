@@ -1,7 +1,9 @@
 import {View, Text, StyleSheet,
-        TextInput, TouchableOpacity} from "react-native";
+        TextInput, TouchableOpacity,
+        ScrollView} from "react-native";
 import {StatusBar} from "expo-status-bar";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import Oferta from "./componenteOferta";
 
 export default function TelaLoja(){
     return(
@@ -52,13 +54,28 @@ export default function TelaLoja(){
             </View>
             {/* Fim da caixaVermelhaTopo */}
 
+            <Text> Oferta</Text>
+
+            <ScrollView horizontal={true}>
+                    <Oferta/>
+                    <Oferta/>
+                    <Oferta/>
+                    <Oferta/>
+                    <Oferta/>
+                    <Oferta/>              
+            </ScrollView>
 
             <StatusBar style="auto"/>
         </View>
+        // Fim do container
     );
 }
 
 const estilos = StyleSheet.create({
+    cxOfertas:{
+        backgroundColor: "yellow",
+        height: 200
+    },
     botaoPesquisar:{
         backgroundColor: "white",
         padding: 10,
