@@ -4,10 +4,12 @@ import {View, Text, StyleSheet,
 import {StatusBar} from "expo-status-bar";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Oferta from "./componenteOferta";
+import Categoria from "./componenteCategoria";
+import MaisPedidos from "./componenteMaisPedidos";
 
 export default function TelaLoja(){
     return(
-        <View style={estilos.container}>
+        <ScrollView style={estilos.container}>
             
             <View style={estilos.cxVermelhaTopo}>
                 
@@ -54,19 +56,65 @@ export default function TelaLoja(){
             </View>
             {/* Fim da caixaVermelhaTopo */}
 
-            <Text> Oferta</Text>
+            <Text style={{fontSize:25,
+                          margin: 15
+            }}> 
+                Ofertas
+            </Text>
+
+            <ScrollView horizontal={true} style={{maxHeight:220}}>
+                    <Oferta nome="Smartphone" 
+                            precoAntigo="1999,90"
+                            precoNovo="1.699,90"/>
+
+                    <Oferta nome="Notebook I5" 
+                            precoAntigo="2.299,90"
+                            precoNovo="1.399,90"/>
+
+                    <Oferta nome="Geladeira 480L" 
+                            precoAntigo="5.299,90"
+                            precoNovo="4.699,90"/>
+
+                    <Oferta nome="Mesa 6 cadeiras" 
+                            precoAntigo="1.199,90"
+                            precoNovo="949,90"/>
+             
+            </ScrollView>
+            {/* Fim da ScrollView das ofertas */}
+            
+            <Text style={{fontSize:25,
+                          margin: 15
+            }}> 
+                Categorias
+            </Text>
 
             <ScrollView horizontal={true}>
-                    <Oferta/>
-                    <Oferta/>
-                    <Oferta/>
-                    <Oferta/>
-                    <Oferta/>
-                    <Oferta/>              
+                <Categoria/>
+                <Categoria/>
+                <Categoria/>
+                <Categoria/>
+                <Categoria/>
+                <Categoria/>
+                <Categoria/>
             </ScrollView>
+            {/* Fim da ScrollView das categorias */}
+
+            <Text style={{fontSize:25,
+                          margin: 15
+            }}> 
+                Mais pedidos
+            </Text>
+
+            <MaisPedidos/>
+            <MaisPedidos/>
+            <MaisPedidos/>
+            <MaisPedidos/>
+            <MaisPedidos/>
+            <MaisPedidos/>        
+            
 
             <StatusBar style="auto"/>
-        </View>
+        </ScrollView>
         // Fim do container
     );
 }
